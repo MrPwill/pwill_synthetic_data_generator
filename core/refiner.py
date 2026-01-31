@@ -9,7 +9,7 @@ from llms.model_registry import JudgeModels
 logger = logging.getLogger(__name__)
 
 class RefinerAgent:
-    def __init__(self, generator: GeneratorAgent, judge_model: str = JudgeModels.CLAUDE_3_5_SONNET):
+    def __init__(self, generator: GeneratorAgent, judge_model: str = JudgeModels.LLAMA_3_1_405B):
         self.generator = generator
         self.judge = JudgeAgent(model_name=judge_model)
         

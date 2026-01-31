@@ -91,12 +91,12 @@ def create_ui():
                         with gr.Row():
                             gen_model = gr.Dropdown(
                                 choices=[m.value for m in GeneratorModels],
-                                value=GeneratorModels.MISTRAL_MEDIUM.value,
+                                value=GeneratorModels.MISTRAL_SMALL.value,
                                 label="Generator Model"
                             )
                             judge_model = gr.Dropdown(
                                 choices=[m.value for m in JudgeModels],
-                                value=JudgeModels.CLAUDE_3_5_SONNET.value,
+                                value=JudgeModels.LLAMA_3_1_405B.value,
                                 label="Judge Model"
                             )
                         

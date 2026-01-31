@@ -2,7 +2,7 @@ import json
 import logging
 from typing import List, Dict, Any, Optional
 from core.schemas import GenerationRequest, GenerationResult, GeneratedSample
-from llms.openrouter_client import OpenRouterClient
+from llms.llm_client import get_llm_client
 
 logger = logging.getLogger(__name__)
 
@@ -14,7 +14,7 @@ class GeneratorAgent:
         """
         Main entry point for generating data.
         """
-        client = OpenRouterClient(model_name=request.model_name)
+        client = get_llm_client(model_name=request.model_name)
         
         system_prompt = self._build_system_prompt(request)
         user_prompt = self._build_user_prompt(request)

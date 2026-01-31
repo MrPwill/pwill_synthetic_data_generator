@@ -1,4 +1,5 @@
-from openai import OpenAI
+from llms.llm_client import get_llm_client
+from llms.model_registry import GeneratorModels
 from config.settings import settings
 import sys
 
@@ -7,23 +8,23 @@ def test_connection():
         settings.validate()
         print("Configuration valid.")
         
-        print(f"Connecting to OpenRouter...")
-        client = OpenAI(
-            base_url=settings.OPENROUTER_BASE_URL,
-            api_key=settings.OPENROUTER_API_KEY,
-        )
+        model_name = GeneratorModels.MISTRAL_SMALL
+        print(f"Connecting to OpenRouter with model {model_name}...")
         
-        response = client.chat.completions.create(
-            model="mistralai/mistral-7b-instruct:free", # Using a potentially free/cheap model for test
+        client = get_llm_client(model_name)
+        
+        response = client.generate(
             messages=[
                 {"role": "user", "content": "Say 'Connection Successful' and nothing else."}
-            ],
+            ]
         )
         
-        print(f"Response received: {response.choices[0].message.content}")
+        print(f"Response received: {response}")
         return True
     except Exception as e:
         print(f"Connection failed: {e}")
+        import traceback
+        traceback.print_exc()
         return False
 
 if __name__ == "__main__":

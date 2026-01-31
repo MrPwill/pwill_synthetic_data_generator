@@ -2,7 +2,7 @@ import logging
 import json
 from typing import List, Optional
 from core.schemas import GeneratedSample, Feedback, EvaluationCriteria
-from llms.openrouter_client import OpenRouterClient
+from llms.llm_client import get_llm_client
 from evaluation.metrics import validate_json_schema
 
 logger = logging.getLogger(__name__)
@@ -20,7 +20,7 @@ class JudgeAgent:
         Evaluate a list of samples against criteria.
         """
         feedbacks = []
-        client = OpenRouterClient(model_name=self.model_name)
+        client = get_llm_client(model_name=self.model_name)
         
         for sample in samples:
             # 1. Hard check: Schema validation
