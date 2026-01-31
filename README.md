@@ -13,7 +13,7 @@
 
 The **Synthetic Data Generator** is an advanced tooling solution designed to solve the data scarcity problem in modern AI development. Unlike simple prompt-based generators, this platform employs a **Multi-Agent Architecture** to ensure that every generated data point meets strict quality, correctness, and schema compliance standards.
 
-By orchestrating specialized agents—a **Generator**, a **Judge**, and a **Refiner**—the system autonomously critiques and improves its own output before presenting it to the user. This "Human-in-the-Loop" optional workflow allows for the rapid creation of robust datasets for fine-tuning LLMs, testing software edge cases, or populating demos.
+By orchestrating specialized agents, a **Generator**, a **Judge**, and a **Refiner** the system autonomously critiques and improves its own output before presenting it to the user. This "Human-in-the-Loop" optional workflow allows for the rapid creation of robust datasets for fine-tuning LLMs, testing software edge cases, or populating demos.
 
 ## ✨ Key Features
 
