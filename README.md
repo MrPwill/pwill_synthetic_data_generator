@@ -45,8 +45,8 @@ The system is built on a modular architecture designed for extensibility:
 
 1.  **Clone the repository**:
     ```bash
-    git clone https://github.com/yourusername/synthetic-data-generator.git
-    cd synthetic-data-generator
+    git clone https://github.com/MrPwill/pwill_synthetic_data_generator git
+    cd pwill_synthetic_data_generator
     ```
 
 2.  **Install dependencies**:
